@@ -10,7 +10,7 @@ import { cloneDeep, set } from 'lodash'
 
 const dummyLevelModel: LevelModel = {
   id_nivel: '1',
-  descripcion: 'fakeNombre'
+  descripción: 'fakeNombre'
 }
 const dummyLevelDomain: Level = {
   id: '1',
@@ -69,7 +69,7 @@ describe('Client route', () => {
   it('Should return an error and 500 if schema validation fails', async () => {
     const apiRoute = setAPIRoute('ORO')
     const dummyClientBadFormat = cloneDeep(dummyLevelModel)
-    dummyClientBadFormat.descripcion = undefined as any
+    dummyClientBadFormat.descripción = undefined as any
     mockClient.getLevel.mockImplementation(() => Promise.resolve(dummyClientBadFormat))
 
     const request = supertest(server)
