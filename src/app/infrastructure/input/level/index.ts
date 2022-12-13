@@ -10,7 +10,7 @@ export const tryToMapLevel = (userModel: LevelModel): ResultPromise<Level, Valid
       .mapFailure((e) => e)
       .map<Level>((r) => ({
         id: r.id_nivel,
-        description: r.descripcion
+        description: r.descripción
       }))
   )
 }
